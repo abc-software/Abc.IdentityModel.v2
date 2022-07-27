@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\abc.snk</AssemblyOriginatorKeyFile>
-    <SignAssembly>true</SignAssembly>
-    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
     <Authors>ABC software</Authors>
     <Company>ABC software</Company>
     <Copyright>© ABC software. All rights reserved.</Copyright>
@@ -13,6 +10,9 @@
     <Version>2.0.0-dev45</Version>
 
     <LangVersion>8.0</LangVersion>
+
+    <AssemblyOriginatorKeyFile>..\common\abc.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
     
     <!--<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
@@ -33,10 +33,13 @@
     <None Remove="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="..\..\build\stylecop.json" />
+    <AdditionalFiles Include="../common/stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.406">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <!--<PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.0" PrivateAssets="All" /> -->
   </ItemGroup>
 </Project>

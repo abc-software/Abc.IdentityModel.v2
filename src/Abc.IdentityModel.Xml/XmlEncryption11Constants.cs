@@ -1,4 +1,13 @@
-﻿#pragma warning disable 1591
+﻿// ----------------------------------------------------------------------------
+// <copyright file="XmlEncryption11Constants.cs" company="ABC software Ltd">
+//    Copyright © ABC SOFTWARE. All rights reserved.
+//
+//    Licensed under the Apache License, Version 2.0.
+//    See LICENSE in the project root for license information.
+// </copyright>
+// ----------------------------------------------------------------------------
+
+#pragma warning disable 1591
 
 namespace Abc.IdentityModel.Xml {
     using System.Diagnostics.CodeAnalysis;

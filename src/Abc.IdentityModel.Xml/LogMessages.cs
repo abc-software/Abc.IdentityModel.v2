@@ -1,4 +1,13 @@
-﻿namespace Abc.IdentityModel.Xml {
+﻿// ----------------------------------------------------------------------------
+// <copyright file="LogMessages.cs" company="ABC software Ltd">
+//    Copyright © ABC SOFTWARE. All rights reserved.
+//
+//    Licensed under the Apache License, Version 2.0.
+//    See LICENSE in the project root for license information.
+// </copyright>
+// ----------------------------------------------------------------------------
+
+namespace Abc.IdentityModel.Xml {
     /// <summary>
     /// Log messages and codes
     /// </summary>
