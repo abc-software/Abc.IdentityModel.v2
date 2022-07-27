@@ -1,5 +1,7 @@
-Enable decryption of encrypted SAML1.1 and SAML2.0 tokens
+# Azure Active Directory IdentityModel Extensions for .NET
 
+## Decryption
+Enable decryption of encrypted SAML1.1 and SAML2.0 tokens
 
 ```cs
 services

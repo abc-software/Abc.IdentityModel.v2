@@ -9,8 +9,8 @@
   "settings": {
     "documentationRules": {
       "xmlHeader": true,
-      "companyName": "ABC Software Ltd",
-      "copyrightText": "   Copyright © 2014-2019 ABC Software Ltd. All rights reserved.\n\n   This library is free software; you can redistribute it and/or.\n   modify it under the terms of the GNU Lesser General Public\n   License  as published by the Free Software Foundation, either\n   version 3 of the License, or (at your option) any later version.\n\n   This library is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\n   Lesser General Public License for more details.\n\n   You should have received a copy of the GNU Lesser General Public\n   License along with the library. If not, see http://www.gnu.org/licenses/.",
+      "companyName": "ABC software Ltd",
+      "copyrightText": "   Copyright © ABC SOFTWARE. All rights reserved.\n\n   Licensed under the Apache License, Version 2.0.\n   See LICENSE in the project root for license information.",
       "headerDecoration": "----------------------------------------------------------------------------",
       "documentInterfaces": true,
       "documentExposedElements": true,

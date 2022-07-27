@@ -8,6 +8,10 @@
     /// Reads and writes XML conforming to https://www.w3.org/TR/2001/PR-xmldsig-core-20010820
     /// </summary>
     public class EncryptedKeyDSigSerialzier : DSigSerializer {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EncryptedKeyDSigSerialzier"/> class.
+        /// </summary>
+        /// <param name="encryptionSerializer">The encryption serializer.</param>
         public EncryptedKeyDSigSerialzier(EncryptionSerializer encryptionSerializer) {
             this.EncryptionSerializer = encryptionSerializer;
         }

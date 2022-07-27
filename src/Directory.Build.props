@@ -18,11 +18,9 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>-->
 
-    <!--
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</PackageProjectUrl>
-    <PackageLicense>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/blob/master/LICENSE.txt</PackageLicense>
-    -->
+    <PackageProjectUrl>https://github.com/abc-software/Abc.IdentityModel.v2</PackageProjectUrl>
+    <PackageLicense>https://github.com/abc-software/Abc.IdentityModel.v2/blob/master/LICENSE.txt</PackageLicense>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
@@ -31,12 +29,12 @@
   </PropertyGroup>
 
 
-  <!--<ItemGroup>
+  <ItemGroup>
     <None Remove="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="..\common\stylecop.json" />
-  </ItemGroup>-->
+    <AdditionalFiles Include="..\..\build\stylecop.json" />
+  </ItemGroup>
 
   <ItemGroup>
     <!--<PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.0" PrivateAssets="All" /> -->

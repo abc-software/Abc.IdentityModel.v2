@@ -2,6 +2,9 @@
     using Microsoft.IdentityModel.Xml;
     using static Microsoft.IdentityModel.Logging.LogHelper;
 
+    /// <summary>
+    /// Represents a XmlDsig KeyInfo element as per: https://www.w3.org/TR/2001/PR-xmldsig-core-20010820/#sec-KeyInfo
+    /// </summary>
     public class EncryptedKeyKeyInfo : KeyInfo {
         /// <summary>
         /// Initializes a new instance of the <see cref="EncryptedKeyKeyInfo"/> class.

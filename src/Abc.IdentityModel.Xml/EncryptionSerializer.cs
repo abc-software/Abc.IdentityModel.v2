@@ -22,7 +22,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="DSigSerializer"/> to use for reading/writing the <see cref="Xml.Signature"/>
+        /// Gets or sets the <see cref="DSigSerializer"/> to use for reading/writing the <see cref="Signature"/>
         /// </summary>
         /// <exception cref="ArgumentNullException">if value is null.</exception>
         /// <remarks>Will be passed to readers that process xmlDsig such as <see cref="EnvelopedSignatureReader"/> and <see cref="EnvelopedSignatureWriter"/>.</remarks>
