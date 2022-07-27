@@ -1,0 +1,37 @@
+<Project>
+  <!--<Import Project="apiCompat.props" />
+  <Import Project="dependencies.props" />
+  <Import Project="targets.props" />
+  <Import Project="version.props" />-->
+
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\build\abc.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>ABC software</Authors>
+    <Copyright>© ABC software. All rights reserved.</Copyright>
+    <Company>ABC software.</Company>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <OutputTypeEx>library</OutputTypeEx>
+    <Product>Abc.IdentityModel</Product>
+
+    <!--
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet</PackageProjectUrl>
+    <PackageLicense>https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/blob/master/LICENSE.txt</PackageLicense>
+    -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\build\stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.0" PrivateAssets="All" /> -->
+  </ItemGroup>
+</Project>
