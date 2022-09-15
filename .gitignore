@@ -8,7 +8,6 @@ z_*/
 Abc.IdentityModel.ClaimExtensions/
 Abc.IdentityModel.Http/
 Abc.IdentityModel.Http.Saml/
-Abc.IdentityModel.Metadata/
 Abc.IdentityModel.Protocols.EidasLight/
 Abc.IdentityModel.Protocols.HomeRealmDiscovery/
 Abc.IdentityModel.Protocols.Saml2/

@@ -7,7 +7,7 @@
     <Product>Abc.IdentityModel</Product>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
-    <Version>2.0.0-dev45</Version>
+    <Version>2.0.0-dev47</Version>
 
     <LangVersion>8.0</LangVersion>
 
@@ -20,7 +20,7 @@
 
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/abc-software/Abc.IdentityModel.v2</PackageProjectUrl>
-    <PackageLicense>https://github.com/abc-software/Abc.IdentityModel.v2/blob/master/LICENSE.txt</PackageLicense>
+    <PackageLicense>https://github.com/abc-software/Abc.IdentityModel.v2/blob/master/License.txt</PackageLicense>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">

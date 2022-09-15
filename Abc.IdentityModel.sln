@@ -8,7 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA37840D-84A5-40AD-9C1F-DFA75BD37780}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		src\Directory.Build.props = src\Directory.Build.props
 		History.md = History.md
 		Readme.md = Readme.md
 	EndProjectSection
@@ -27,7 +26,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Xml", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Xml.UnitTests", "test\Abc.IdentityModel.Xml.UnitTests\Abc.IdentityModel.Xml.UnitTests.csproj", "{350C8959-D2E5-4CE9-9A40-C4DEBDF9D866}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Protocols.Metadata", "src\Abc.IdentityModel.Metadata\Abc.IdentityModel.Protocols.Metadata.csproj", "{F0D60F29-6FC1-4DD8-93B1-8EB1359A0AB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Metadata", "src\Abc.IdentityModel.Metadata\Abc.IdentityModel.Metadata.csproj", "{F0D60F29-6FC1-4DD8-93B1-8EB1359A0AB9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Protocols.EidasLight", "src\Abc.IdentityModel.Protocols.EidasLight\Abc.IdentityModel.Protocols.EidasLight.csproj", "{152F0F79-C8C2-471D-956E-B76DE499C4EB}"
 EndProject
@@ -36,6 +35,13 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Tokens.Saml.UnitTests", "test\Abc.IdentityModel.Tokens.Saml.UnitTests\Abc.IdentityModel.Tokens.Saml.UnitTests.csproj", "{F0CB1FE1-26F0-40C6-8267-7C707036F3E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Tokens.Saml", "src\Abc.IdentityModel.Tokens.Saml\Abc.IdentityModel.Tokens.Saml.csproj", "{2DF9A27E-5B76-4CEC-8221-BA1B0F88F864}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B51104E7-298C-4C57-A1E6-A5DC645F1B8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -98,6 +104,21 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A4BB4E8-0B45-453A-8B5C-85CCF1A95988} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{E2D38C11-0BAB-4B03-9557-FE8A6DC1CBB3} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{FB71CB68-FF59-4767-8E8F-451650F1398F} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{D2E873C0-0C79-47DA-B650-4F9A78EB0D34} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{58FA8A0D-EE71-42A6-B00B-D293F295B8AD} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{1AF5BF03-1125-4335-A13E-09E81B49E3D5} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{0772510A-20C8-4740-AC71-E07CB28C14D0} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{350C8959-D2E5-4CE9-9A40-C4DEBDF9D866} = {B51104E7-298C-4C57-A1E6-A5DC645F1B8E}
+		{F0D60F29-6FC1-4DD8-93B1-8EB1359A0AB9} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{152F0F79-C8C2-471D-956E-B76DE499C4EB} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{F9A88FBF-2A6D-410B-881B-31D8B29C8C05} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{F0CB1FE1-26F0-40C6-8267-7C707036F3E7} = {B51104E7-298C-4C57-A1E6-A5DC645F1B8E}
+		{2DF9A27E-5B76-4CEC-8221-BA1B0F88F864} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A1FCDD4-DB9D-455F-BE17-752FBAEC340B}
