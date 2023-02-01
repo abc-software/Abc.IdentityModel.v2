@@ -96,6 +96,11 @@ namespace Abc.IdentityModel.Tokens.Saml {
         }
 
         /// <inheritdoc/>
+        public override SecurityKeyIdentifierClause CreateSecurityTokenReference(SecurityToken token, bool attached) {
+            return new WsSecuritySecurityKeyIdentifierClause(token.Id, "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.0#SAMLAssertionID", "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1");
+        }
+
+        /// <inheritdoc/>
         protected override SamlSubject CreateSubject(SecurityTokenDescriptor tokenDescriptor) {
             var samlSubject = base.CreateSubject(tokenDescriptor);
 

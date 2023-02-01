@@ -123,5 +123,10 @@ namespace Abc.IdentityModel.Tokens.Saml2 {
 
             return new Saml2SecurityToken(saml2Assertion);
         }
+
+        /// <inheritdoc/>
+        public override SecurityKeyIdentifierClause CreateSecurityTokenReference(SecurityToken token, bool attached) {
+            return new WsSecuritySecurityKeyIdentifierClause(token.Id, "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLID", "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0");
+        }
     }
 }
