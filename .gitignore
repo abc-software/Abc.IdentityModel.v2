@@ -5,12 +5,8 @@
 
 # TODO
 z_*/
-Abc.IdentityModel.ClaimExtensions/
-Abc.IdentityModel.Http/
-Abc.IdentityModel.Http.Saml/
 Abc.IdentityModel.Protocols.EidasLight/
 Abc.IdentityModel.Protocols.HomeRealmDiscovery/
-Abc.IdentityModel.Protocols.Saml2/
 Abc.IdentityModel.Protocols.WsFederation/
 Abc.IdentityModel.Protocols.WsSecurity/
 

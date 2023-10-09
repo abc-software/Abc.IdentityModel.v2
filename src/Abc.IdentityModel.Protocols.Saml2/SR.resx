@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HtmlPostNoScriptButtonText" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="HtmlPostNoScriptMessage" xml:space="preserve">
+    <value>Script is disabled. Click Submit to continue.</value>
+  </data>
+  <data name="HtmlPostStyle" xml:space="preserve">
+    <value>position: absolute;background: white url('data:image/gif;base64,R0lGODlhGAAYAIAAAFLOQv///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgABACwOAAAABAAEAAACBQxgp5dRACH5BAUKAAEALBQABgAEAAQAAAIFDGCnl1EAIfkEBQoAAQAsFAAOAAQABAAAAgUMYKeXUQAh+QQFCgABACwOABQABAAEAAACBQxgp5dRACH5BAUKAAEALAYAFAAEAAQAAAIFDGCnl1EAIfkEBQoAAQAsAAAOAAQABAAAAgUMYKeXUQAh+QQFCgABACwAAAYABAAEAAACBQxgp5dRACH5BAkKAAEALAAAAAAYABgAAAIdjB8AyN2qnGRwzZss3rz7D4biSJbmiabqyrbuOxYAIfkECQoAAQAsAAAAABgAGAAAAjaMHwDI3aqcZHDNmyzevO/oGVEVVqRHgqUWtu4LU2w3Qqs5Y2n+8fH/yKkuJ5FNdzQOJ8uMowAAIfkECQoAAQAsAAAAABgAGAAAAjKMHwDI3aqcZHDNmyzevO/oUVCIVGSpnerKth4YRuZbjbScdrDLP3nGmRmEEyKx+NsdCgAh+QQJCgABACwAAAAAEgAYAAACKowfAMit2mJ6MsKKsz53v+VR2zSW5olKnfaNrQum8rkatS3i96vHyL4oAAAh+QQJCgABACwAAAAACgAYAAACIIwfAHiqnByMs84H3WL6bguGIoJxklmS38iqXmp02VIAACH5BAkKAAEALAAAAAAKABIAAAIajB8AeKqcHIyzzgfdYvpuC4YignGSWZIfUgAAIfkECQoAAQAsAAAAAAoACgAAAhGMHwB4qpwcjLPOB91i+m5WAAAh+QQJCgABACwGAAAABAAEAAACBQxgp5dRADs=') no-repeat center center;top: 0;left: 0;width: 100%;height: 100%;</value>
+  </data>
+  <data name="HtmlPostTitle" xml:space="preserve">
+    <value>Working...</value>
+  </data>
+  <data name="ID0001" xml:space="preserve">
+    <value>ID0001: The value argument is not a valid type. ClaimsProviderBase type expected.</value>
+    <comment>0xxx - Basic errors</comment>
+  </data>
+  <data name="ID0002" xml:space="preserve">
+    <value>ID0002: SecurityTokenServiceConfiguration.ClaimsProviderBase is either null or not of type SecurityTokenService. Specify a valid SecurityTokenService type.</value>
+  </data>
+  <data name="ID0003" xml:space="preserve">
+    <value>ID0003: SecurityTokenServiceConfiguration.ClaimsProviderBase is of type '{0}' but is expected to be of type '{1}'.</value>
+  </data>
+  <data name="ID0004" xml:space="preserve">
+    <value>ID0004: SecurityTokenServiceConfiguration is null.</value>
+  </data>
+  <data name="ID0005" xml:space="preserve">
+    <value>ID0005: EncodedContext cannot be created for message types other than requests. Message type: {0}</value>
+  </data>
+  <data name="ID0010" xml:space="preserve">
+    <value>ID0010: The input '{0}' is null.</value>
+  </data>
+  <data name="ID0011" xml:space="preserve">
+    <value>ID0011: The input '{0}' collection does not contain a property named '{1}'.</value>
+  </data>
+  <data name="ID0101" xml:space="preserve">
+    <value>ID0101: The key needed to decrypt the encrypted security token could not be resolved from the following security key identifier '{0}'. Ensure that the SecurityTokenResolver is populated with the required key.</value>
+  </data>
+  <data name="ID0102" xml:space="preserve">
+    <value>ID0102: The encrypted security token was directly encrypted using an asymmetric key, which is not supported. An xenc:EncryptedKey must be used to encrypt a symmetric key using the asymmetric key.</value>
+  </data>
+  <data name="ID0103" xml:space="preserve">
+    <value>ID0103: The keyInfoSerializer must return an EncryptedKeyIdentifierClause when reading an xenc:EncryptedKey element.</value>
+  </data>
+  <data name="ID1006" xml:space="preserve">
+    <value>ID1006: More than one configuration element found under '{0}'.</value>
+    <comment>1xxx - Configuration Error</comment>
+  </data>
+  <data name="ID1007" xml:space="preserve">
+    <value>ID1007: Configuration errors. Custom configuration has unrecognized element '{0}' as a child of '{1}'.</value>
+  </data>
+  <data name="ID1008" xml:space="preserve">
+    <value>ID1008: Configuration errors. The element '{0}' must contain the following attributes '{1}'.</value>
+  </data>
+  <data name="ID1009" xml:space="preserve">
+    <value>ID1009: The type '{0}' cannot be resolved. Verify the spelling is correct or that the full type name is provided.</value>
+  </data>
+  <data name="ID1012" xml:space="preserve">
+    <value>ID1012: The configuration property value is not valid.\nProperty name: '{0}'\nError: '{1}'</value>
+  </data>
+  <data name="ID1013" xml:space="preserve">
+    <value>ID1013: FederatedPassiveSignIn.UseFederationPropertiesFromConfiguration is true. However, a valid WSFederationAuthenticationElement could not be retrieved from configuration.</value>
+  </data>
+  <data name="ID1014" xml:space="preserve">
+    <value>ID1014: Cannot retrieve value for parameter: '{0}'.</value>
+  </data>
+  <data name="ID1015" xml:space="preserve">
+    <value>ID1015: The RequireHttps attribute is set to true but '{0}' URI scheme is not https. Change the Issuer URI scheme to https or set RequireHttps to false.</value>
+  </data>
+  <data name="ID1016" xml:space="preserve">
+    <value>ID1016: The EncryptedSecurityTokenHandler's ContainingCollection is set to null. EncryptedSecurityTokens cannot be written as the ContainingCollection has the SecurityTokenHandlers required to write the inner token. Set this property to a valid SecurityTokenHandlerCollection.</value>
+  </data>
+  <data name="ID1017" xml:space="preserve">
+    <value>ID1017: A SecurityTokenHandler is not registered to read security token ('{0}', '{1}').</value>
+  </data>
+  <data name="ID1018" xml:space="preserve">
+    <value>ID1018: The EncryptedSecurityTokenHandler's ContainingCollection is set to null. EncryptedSecurityTokens cannot be written as the ContainingCollection has the SecurityTokenHandlers required to write the inner token. Set this property to a valid SecurityTokenHandlerCollection.</value>
+  </data>
+  <data name="ID1019" xml:space="preserve">
+    <value>ID1019: A SecurityTokenHandler that is registered to write a token of type '{0}' was not found.</value>
+  </data>
+  <data name="ID1020" xml:space="preserve">
+    <value>ID1020: The token cannot be validated or writed because it is not a {0}.</value>
+  </data>
+  <data name="ID1021" xml:space="preserve">
+    <value>ID1021: The Configuration property of this SecurityTokenHandler is set to null. Tokens cannot be read or validated in this state. Set this property or add this SecurityTokenHandler to a SecurityTokenHandlerCollection with a valid Configuration property.</value>
+  </data>
+  <data name="ID1022" xml:space="preserve">
+    <value>ID1022: Cannot detect token replays: Configuration.TokenReplayCache property is null.</value>
+  </data>
+  <data name="ID1023" xml:space="preserve">
+    <value>ID1023: The Configuration.ServiceTokenResolver property of this SecurityTokenHandler is set to null. Tokens cannot be read in this state.Set the value of Configuration.ServiceTokenResolver.</value>
+  </data>
+  <data name="ID2001" xml:space="preserve">
+    <value>ID2001: The SAML protocol message cannot be read because it contains data that is not valid.</value>
+    <comment>2xxx - SAML serialization</comment>
+  </data>
+  <data name="ID2002" xml:space="preserve">
+    <value>ID2002: Unrecognized SAML message type: '{0}'.</value>
+  </data>
+  <data name="ID2003" xml:space="preserve">
+    <value>ID2003: An element of an unexpected type was encountered. To support extended types in SAML protocol messages, extend the SamlProtocolSerializer. Expected type name={0} namespace={1}; Encountered type name={2} namespace={3}</value>
+  </data>
+  <data name="ID2004" xml:space="preserve">
+    <value>ID2004: '{0}' is not a valid xsd:ID value.</value>
+  </data>
+  <data name="ID2005" xml:space="preserve">
+    <value>ID2005: The element cannot be empty('{0}', '{1}')</value>
+  </data>
+  <data name="ID2006" xml:space="preserve">
+    <value>ID2006: A required attribute '{0}' is not present.</value>
+  </data>
+  <data name="ID2007" xml:space="preserve">
+    <value>ID2007: SAML message with MajorVersion '{0}' and MinorVersion '{1}' is not supported. The supported version is MajorVersion '{2}' and MinorVersion '{3}'.</value>
+  </data>
+  <data name="ID2008" xml:space="preserve">
+    <value>ID2008: SAML message is not valid. XmlReader was expected to reference ('{0}', '{1}') but was referencing ('{2}', '{3}').</value>
+  </data>
+  <data name="ID2009" xml:space="preserve">
+    <value>ID2009: SAML message has more than one '{0}' element specified.</value>
+  </data>
+  <data name="ID2010" xml:space="preserve">
+    <value>ID2010: SAML message contains an unrecognized element ('{0}', '{1}').</value>
+  </data>
+  <data name="ID2011" xml:space="preserve">
+    <value>ID2011: SAML message must contain at least one '{0}' specified.</value>
+  </data>
+  <data name="ID2012" xml:space="preserve">
+    <value>ID2012: The given SAML query is not recognized. '{0}'</value>
+  </data>
+  <data name="ID2013" xml:space="preserve">
+    <value>ID2013: SAML Request does not have any SAML Query, AssertionIDreference or AssertionArtifact  . SAML assertion must have at least one SAML Query, AssertionIDReference or AssertionArtifact.</value>
+  </data>
+  <data name="ID2014" xml:space="preserve">
+    <value>ID2014: SAML Request  have more SAML Query, AssertionIDreference or AssertionArtifact  . SAML assertion must have one SAML Query, AssertionIDReference or AssertionArtifact.</value>
+  </data>
+  <data name="ID2015" xml:space="preserve">
+    <value>ID2015: An exception occurred while parsing a SAML binding message.</value>
+  </data>
+  <data name="ID2016" xml:space="preserve">
+    <value>ID2016: Cannot create a SAML binding message from the given HttpRequest. Check if the request contains a valid Uri or Form Post that contains protocol parameters for SAML HTTP bindings.</value>
+  </data>
+  <data name="ID2017" xml:space="preserve">
+    <value>ID2017: Cannot create SAML message from the given URI '{0}'.</value>
+  </data>
+  <data name="ID2018" xml:space="preserve">
+    <value>ID2018: The IdentityProvider collection is empty. An empty collection cannot be serialized. Add at least one IdentityProviderEntry to the collection before serialization.</value>
+  </data>
+  <data name="ID2019" xml:space="preserve">
+    <value>ID2019: The RequestedAuthenticationContext cannot be serialized because the ReferenceType property is set to a value that is not valid: {0}</value>
+  </data>
+  <data name="ID2020" xml:space="preserve">
+    <value>ID2020: The RequestedAuthenticationContext cannot be serialized because the References collection is empty. Add at least one reference to the collection before serialization.</value>
+  </data>
+  <data name="ID2021" xml:space="preserve">
+    <value>ID2021: A required element is not present: {0}.</value>
+  </data>
+  <data name="ID2022" xml:space="preserve">
+    <value>ID2022: The string does not meet the restriction for samlp:AuthnContextComparisonType: {0}.</value>
+  </data>
+  <data name="ID2023" xml:space="preserve">
+    <value>ID2023: An unsupported SAML version was encountered: {0}.</value>
+  </data>
+  <data name="ID2024" xml:space="preserve">
+    <value>ID2024: Wrong SAML message type '{0}', expected '{1}'.</value>
+  </data>
+  <data name="ID2025" xml:space="preserve">
+    <value>ID2025: Expected HTTP redirect or HTTP POST SAML binding. Received: '{0}'</value>
+  </data>
+  <data name="ID2026" xml:space="preserve">
+    <value>ID2026: An abstract element was encountered which does not specify its concrete type.\nElement name: '{0}'\nElement namespace: '{1}'</value>
+  </data>
+  <data name="ID2901" xml:space="preserve">
+    <value>ID2901: The protocol message cannot be read because it contains data that is not valid.</value>
+    <comment>29xx - Common serialization</comment>
+  </data>
+  <data name="ID2902" xml:space="preserve">
+    <value>ID2902: A required element is not present: {0}.</value>
+  </data>
+  <data name="ID2903" xml:space="preserve">
+    <value>ID2903: '{0}' is not a valid xsd:Any value.</value>
+  </data>
+  <data name="ID2904" xml:space="preserve">
+    <value>ID2904: '{0}' is not a valid xsd:ID value.</value>
+  </data>
+  <data name="ID2905" xml:space="preserve">
+    <value>ID2905: The element cannot be empty('{0}', '{1}')</value>
+  </data>
+  <data name="ID2906" xml:space="preserve">
+    <value>ID2906: A required attribute '{0}' is not present.</value>
+  </data>
+  <data name="ID2907" xml:space="preserve">
+    <value>ID2907: An unexpected attribute '{0}' value was encountered. Expected value='{1}'; Encountered value='{2}'</value>
+  </data>
+  <data name="ID2908" xml:space="preserve">
+    <value>ID2908: Unexpected element '{0}' in namespace '{1}' found. Expected element '{2}' under namespace '{3}'.</value>
+  </data>
+  <data name="ID2909" xml:space="preserve">
+    <value>ID2909: An error occurred while writing the Required parameter '{0}' is not set.</value>
+  </data>
+  <data name="ID3001" xml:space="preserve">
+    <value>ID3001: The AttributeStorage query parameter is null.</value>
+    <comment>3xxx - AttributeStorage</comment>
+  </data>
+  <data name="ID3002" xml:space="preserve">
+    <value>ID3002: The query:'{0}' has at least one parameter placeholder that is not valid: {1}. Make sure there are no single quotes around the placeholder.</value>
+  </data>
+  <data name="ID3003" xml:space="preserve">
+    <value>ID3003: The AttributeStorage query parameter '{0}' cannot contain ';'.</value>
+  </data>
+  <data name="ID3004" xml:space="preserve">
+    <value>ID3004: The AttributeStorage query:'{0}' has incorrect number of parameter values specified:'{1}'.</value>
+  </data>
+  <data name="ID3005" xml:space="preserve">
+    <value>ID3005: AttributeStorage query attribute is null.</value>
+  </data>
+  <data name="ID3006" xml:space="preserve">
+    <value>ID3006: At least one AttributeStorage query parameter must be specified.</value>
+  </data>
+  <data name="ID4001" xml:space="preserve">
+    <value>ID4001: The WS-Federation Passive session state cannot be decoded from the input value '{0}'.</value>
+    <comment>4xxx - Web</comment>
+  </data>
+  <data name="ID4002" xml:space="preserve">
+    <value>ID4002: An error occurred while processing the request. Contact your administrator for details.</value>
+  </data>
+  <data name="ID4003" xml:space="preserve">
+    <value>ID4003: The SAML authentication request element '{0}' is not supported.</value>
+  </data>
+  <data name="ID4004" xml:space="preserve">
+    <value>ID4004: SAML authentication request for the WebSSO profile must specify an Issuer.</value>
+  </data>
+  <data name="ID4005" xml:space="preserve">
+    <value>ID4005: SAML authentication request for the WebSSO profile must specify an Issuer with Format '{0}'. Received Issuer Format: '{1}'.</value>
+  </data>
+  <data name="ID4006" xml:space="preserve">
+    <value>ID4006: SAML authentication request for the WebSSO profile must specify an Issuer with no NameQualifier, SPNameQualifier or SPProvidedId properties.</value>
+  </data>
+  <data name="ID4007" xml:space="preserve">
+    <value>ID4007: SAML authentication request for the WebSSO profile must not specify any SubjectConfirmations.</value>
+  </data>
+</root>
