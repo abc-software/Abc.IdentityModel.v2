@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RootNamespace>Abc.IdentityModel.Tokens</RootNamespace>
     <PackageTags>.NET;Windows;Authentication;Identity;SamlTokens;Saml Token;Saml2 Token;Encryption</PackageTags>
@@ -22,11 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.21.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.21.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens.Saml" Version="6.21.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Xml" Version="6.21.0" />
-    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.21.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="7.3.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.3.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens.Saml" Version="7.3.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Xml" Version="7.3.1" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.3.1" />
   </ItemGroup>
 
 </Project>
