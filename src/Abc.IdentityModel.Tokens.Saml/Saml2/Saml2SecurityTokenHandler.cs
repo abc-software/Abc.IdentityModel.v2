@@ -82,13 +82,14 @@ namespace Abc.IdentityModel.Tokens.Saml2 {
             var validateSignature = handlerType.GetMethod("ValidateSignature", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance, Type.DefaultBinder, new Type[] { typeof(Saml2SecurityToken), typeof(string), typeof(TokenValidationParameters) }, null);
             var validateToken = handlerType.GetMethod("ValidateToken", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             validateSignature.Invoke(this, new object[] { saml2SecurityToken, saml2SecurityToken.Assertion.CanonicalString, validationParameters });
-            
+
             var parameters = new object[] { saml2SecurityToken, saml2SecurityToken.Assertion.CanonicalString, validationParameters, null };
             var principal = (ClaimsPrincipal)validateToken.Invoke(this, parameters);
             validatedToken = (SecurityToken)parameters[3];
             return principal;
         }
 
+        /// <inheritdoc/>
         public override ClaimsPrincipal ValidateToken(string token, TokenValidationParameters validationParameters, out SecurityToken validatedToken) {
             if (string.IsNullOrEmpty(token)) {
                 throw LogArgumentNullException(nameof(token));
@@ -104,6 +105,11 @@ namespace Abc.IdentityModel.Tokens.Saml2 {
 
             using XmlDictionaryReader reader = XmlDictionaryReader.CreateTextReader(Encoding.UTF8.GetBytes(token), XmlDictionaryReaderQuotas.Max);
             return ValidateToken(reader, validationParameters, out validatedToken);
+        }
+
+        /// <inheritdoc/>
+        public override SecurityToken ReadToken(XmlReader reader, TokenValidationParameters validationParameters) {
+            return this.ReadSaml2Token(reader, validationParameters);
         }
 
         public virtual Saml2SecurityToken ReadSaml2Token(XmlReader reader, TokenValidationParameters validationParameters) {

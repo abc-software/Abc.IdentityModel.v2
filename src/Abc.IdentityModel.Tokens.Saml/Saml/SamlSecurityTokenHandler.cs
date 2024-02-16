@@ -45,6 +45,15 @@ namespace Abc.IdentityModel.Tokens.Saml {
         }
 
         /// <inheritdoc/>
+        public override SecurityToken ReadToken(XmlReader reader, TokenValidationParameters validationParameters) {
+            if (this.EncryptedSecurityTokenHandler.CanReadToken(reader)) {
+                return (SamlSecurityToken)this.EncryptedSecurityTokenHandler.ReadToken(reader, validationParameters);
+            }
+
+            return base.ReadSamlToken(reader);
+        }
+
+        /// <inheritdoc/>
         public override SamlSecurityToken ReadSamlToken(XmlReader reader) {
             if (this.EncryptedSecurityTokenHandler.CanReadToken(reader)) {
                 return (SamlSecurityToken)this.EncryptedSecurityTokenHandler.ReadToken(reader);
