@@ -39,6 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Tokens.Jw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Tokens.Jwt.UnitTests", "test\Abc.IdentityModel.Tokens.Jwt.UnitTests\Abc.IdentityModel.Tokens.Jwt.UnitTests.csproj", "{6C0555D9-28CC-4722-9188-DD69F6DCE44F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{D0779697-4C87-48AD-A0B8-70C20A71FC8A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
