@@ -13,13 +13,10 @@
     <AssemblyOriginatorKeyFile>..\common\abc.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     
-    <!--<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>-->
-
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/abc-software/Abc.IdentityModel.v2</PackageProjectUrl>
-    <PackageLicense>https://github.com/abc-software/Abc.IdentityModel.v2/blob/master/License.txt</PackageLicense>
+    <RepositoryUrl>https://github.com/abc-software/Abc.IdentityModel.v2.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/abc-software/Abc.IdentityModel.v2/blob/master/Readme.md</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
