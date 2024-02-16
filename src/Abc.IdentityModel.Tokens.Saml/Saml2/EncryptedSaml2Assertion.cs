@@ -28,14 +28,12 @@ namespace Abc.IdentityModel.Tokens.Saml2 {
             this.Advice = assertion.Advice;
             this.Conditions = assertion.Conditions;
             this.Subject = assertion.Subject;
-            
+
             foreach (var item in assertion.Statements) {
                 this.Statements.Add(item);
             }
         }
 
         public EncryptingCredentials EncryptingCredentials { get; set; }
-
-        public EncryptedData EncryptedData { get; set; }
     }
 }

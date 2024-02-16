@@ -49,7 +49,8 @@ namespace Abc.IdentityModel.Tokens.Saml2 {
 
             return base.ReadAssertion(reader);
         }
-        protected EncryptedSaml2Assertion ReadEncryptedAssertion(XmlReader reader, TokenValidationParameters validationParameters) {
+
+        protected Saml2Assertion ReadEncryptedAssertion(XmlReader reader, TokenValidationParameters validationParameters) {
             reader.ReadStartElement(Saml2Constants.Elements.EncryptedAssertion, Saml2Constants.Namespace);
             var encryptedData = this.encryptionSerializer.ReadEncryptedData(reader);
             reader.ReadEndElement();
@@ -69,14 +70,16 @@ namespace Abc.IdentityModel.Tokens.Saml2 {
 
             var saml2Assertion = EncryptionExtension.Decrypt(encryptedData, key, r => base.ReadAssertion(r));
 
+            return saml2Assertion;
+            /*
             return new EncryptedSaml2Assertion(saml2Assertion) {
                 EncryptingCredentials = new EncryptingCredentials(
-                    key, 
-                    encryptedData.EncryptionMethod.Algorithm?.ToString(), 
-                    (encryptedData.KeyInfo as EncryptedKeyKeyInfo)?.EncryptedKey?.EncryptionMethod?.Algorithm.ToString() ?? "http://www.w3.org/2001/04/xmlenc#rsa-oaep"
-                ),
-                EncryptedData = encryptedData,
+                    key,
+                    (encryptedData.KeyInfo as EncryptedKeyKeyInfo)?.EncryptedKey?.EncryptionMethod?.Algorithm.ToString() ?? "http://www.w3.org/2001/04/xmlenc#rsa-oaep",
+                    encryptedData.EncryptionMethod.Algorithm?.ToString()
+                )
             };
+            */
         }
 
         protected void WriteEncryptedAssertion(XmlWriter writer, EncryptedSaml2Assertion assertion) {
