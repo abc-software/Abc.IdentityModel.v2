@@ -5,7 +5,6 @@
 
 # TODO
 z_*/
-Abc.IdentityModel.Protocols.EidasLight/
 Abc.IdentityModel.Protocols.HomeRealmDiscovery/
 Abc.IdentityModel.Protocols.WsFederation/
 Abc.IdentityModel.Protocols.WsSecurity/

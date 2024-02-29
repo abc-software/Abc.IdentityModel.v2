@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Abc.IdentityModel.Protocols.Saml2\Saml11\SamlConstants.cs" Link="SamlConstants.cs" />
+    <Compile Include="..\Abc.IdentityModel.Protocols.Saml2\Saml2\Saml2Constants.cs" Link="Saml2Constants.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="7.3.1" />
+    <PackageReference Include="Apache.Ignite" Version="2.16.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+</Project>

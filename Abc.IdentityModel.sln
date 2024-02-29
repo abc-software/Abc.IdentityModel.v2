@@ -44,6 +44,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{D07796
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Protocols.EidasLight", "src\Abc.IdentityModel.Protocols.EidasLight\Abc.IdentityModel.Protocols.EidasLight.csproj", "{4B8DC977-A5AC-49E0-8E99-93ED6696A48A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abc.IdentityModel.Protocols.EidasLight.UnitTests", "test\Abc.IdentityModel.Protocols.EidasLight.UnitTests\Abc.IdentityModel.Protocols.EidasLight.UnitTests.csproj", "{CCDF4778-429E-447F-AFFF-16177542A27D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +98,14 @@ Global
 		{6C0555D9-28CC-4722-9188-DD69F6DCE44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C0555D9-28CC-4722-9188-DD69F6DCE44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C0555D9-28CC-4722-9188-DD69F6DCE44F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B8DC977-A5AC-49E0-8E99-93ED6696A48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8DC977-A5AC-49E0-8E99-93ED6696A48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8DC977-A5AC-49E0-8E99-93ED6696A48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8DC977-A5AC-49E0-8E99-93ED6696A48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCDF4778-429E-447F-AFFF-16177542A27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCDF4778-429E-447F-AFFF-16177542A27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCDF4778-429E-447F-AFFF-16177542A27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCDF4778-429E-447F-AFFF-16177542A27D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +122,8 @@ Global
 		{2DF9A27E-5B76-4CEC-8221-BA1B0F88F864} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
 		{4FAF757C-98F6-4BE4-8529-5E4F4A408122} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
 		{6C0555D9-28CC-4722-9188-DD69F6DCE44F} = {B51104E7-298C-4C57-A1E6-A5DC645F1B8E}
+		{4B8DC977-A5AC-49E0-8E99-93ED6696A48A} = {23BAA3C5-E64C-47B8-8D2A-53EE17C4004F}
+		{CCDF4778-429E-447F-AFFF-16177542A27D} = {B51104E7-298C-4C57-A1E6-A5DC645F1B8E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A1FCDD4-DB9D-455F-BE17-752FBAEC340B}

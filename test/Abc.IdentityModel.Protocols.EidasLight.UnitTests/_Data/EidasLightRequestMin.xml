@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<lightRequest xmlns="http://cef.eidas.eu/LightRequest">
+  <citizenCountryCode>citizenCountryCode1</citizenCountryCode>
+  <id>id1</id>
+  <issuer>issuer1</issuer>
+  <levelOfAssurance>http://uri1</levelOfAssurance>
+  <requestedAttributes>
+    <attribute>
+      <definition>definition1</definition>
+    </attribute>
+  </requestedAttributes>
+</lightRequest>

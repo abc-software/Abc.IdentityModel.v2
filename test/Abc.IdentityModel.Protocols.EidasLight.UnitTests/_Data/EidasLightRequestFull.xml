@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<lightRequest xmlns="http://cef.eidas.eu/LightRequest">
+  <citizenCountryCode>citizenCountryCode1</citizenCountryCode>
+  <id>id1</id>
+  <issuer>issuer1</issuer>
+  <levelOfAssurance type="notified">http://eidas.europa.eu/LoA/low</levelOfAssurance>
+  <levelOfAssurance type="notified">http://eidas.europa.eu/LoA/substantial</levelOfAssurance>
+  <levelOfAssurance type="nonNotified">http://eidas.europa.eu/LoA/high</levelOfAssurance>
+  <nameIdFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</nameIdFormat>
+  <providerName>providerName1</providerName>
+  <spType>public</spType>
+  <spCountryCode>spCountryCode1</spCountryCode>
+  <requesterId>http://uri1</requesterId>
+  <relayState>relayState1</relayState>
+  <requestedAttributes>
+    <attribute>
+      <definition>definition1</definition>
+      <value>value1</value>
+      <value>value2</value>
+      <value>value3</value>
+    </attribute>
+    <attribute>
+      <definition>definition2</definition>
+      <value>value4</value>
+      <value>value5</value>
+      <value>value6</value>
+    </attribute>
+    <attribute>
+      <definition>definition3</definition>
+      <value>value7</value>
+      <value>value8</value>
+      <value>value9</value>
+    </attribute>
+  </requestedAttributes>
+</lightRequest>

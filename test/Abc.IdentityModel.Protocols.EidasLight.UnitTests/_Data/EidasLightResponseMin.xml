@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<lightResponse xmlns="http://cef.eidas.eu/LightResponse">
+  <id>id1</id>
+  <inResponseToId>inResponseToId1</inResponseToId>
+  <issuer>issuer1</issuer>
+  <status />
+  <attributes/>
+</lightResponse>
