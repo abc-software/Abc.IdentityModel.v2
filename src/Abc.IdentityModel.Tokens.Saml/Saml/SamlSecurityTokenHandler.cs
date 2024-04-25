@@ -18,6 +18,7 @@ namespace Abc.IdentityModel.Tokens.Saml {
     using System.Security.Claims;
     using System.Text;
     using System.Xml;
+    using static Microsoft.IdentityModel.Logging.LogHelper;
 
     public class SamlSecurityTokenHandler : Microsoft.IdentityModel.Tokens.Saml.SamlSecurityTokenHandler {
         internal virtual EncryptedSecurityTokenHandler EncryptedSecurityTokenHandler => new EncryptedSecurityTokenHandler(this);
@@ -148,6 +149,39 @@ namespace Abc.IdentityModel.Tokens.Saml {
             }
 
             return base.CreateStatements(tokenDescriptor, authenticationInformation);
+        }
+
+        /// <inheritdoc/>
+        protected override SamlAttribute CreateAttribute(Claim claim) {
+            if (claim == null) {
+                throw LogArgumentNullException(nameof(claim));
+            }
+
+            // A SamlAttribute 1.0 is required to have the attributeNamespace and attributeName be non-null and non-empty.
+            string claimType = claim.Type;
+
+            int lastSlashIndex = claimType.LastIndexOf('/');
+            if ((lastSlashIndex == 0) || (lastSlashIndex == -1)) {
+                throw LogExceptionMessage(new SamlSecurityTokenException(FormatInvariant("IDX11523: The claim type must have namespace and name which separated by slash. Input claim: '{0}'.", MarkAsNonPII(claimType))));
+            }
+
+            if (lastSlashIndex == claim.Type.Length - 1) {
+                throw LogExceptionMessage(new SamlSecurityTokenException(FormatInvariant("IDX11523: The claim type must have namespace and name which separated by slash. Input claim: '{0}'.", MarkAsNonPII(claimType))));
+            }
+
+            var samlAttribute = new SamlAttribute(
+                claimType.Substring(0, lastSlashIndex),
+                claimType.Substring(lastSlashIndex + 1, claimType.Length - (lastSlashIndex + 1)),
+                new string[] { claim.Value }) {
+                AttributeValueXsiType = claim.ValueType,
+            };
+
+            // fix: do not set OriginalIssuer for LOCAL AUTHORITY
+            if (!StringComparer.Ordinal.Equals(ClaimsIdentity.DefaultIssuer, claim.OriginalIssuer)) {
+                samlAttribute.OriginalIssuer = claim.OriginalIssuer;
+            }
+
+            return samlAttribute;
         }
     }
 }

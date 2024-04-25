@@ -68,9 +68,9 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
             message.Should().NotBeNull();
             message.Should().BeOfType<EidasLightRequest>();
 
-            Assert.Equal("id1", message.Id);
-            Assert.Equal("relayState1", message.RelayState);
-            Assert.Equal("issuer1", message.Issuer);
+            message.Id.Should().Be("id1");
+            message.RelayState.Should().Be("relayState1");
+            message.Issuer.Should().Be("issuer1");
 
             var eidasLightMessage = message as EidasLightRequest;
 
