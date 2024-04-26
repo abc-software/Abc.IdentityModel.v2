@@ -96,6 +96,7 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
             }
             catch (Exception ex) when (theoryData.ExpectedException != null) {
                 Assert.IsType(theoryData.ExpectedException.GetType(), ex);
+                Assert.StartsWith(theoryData.ExpectedException.Message, ex.Message);
             }
         }
 
@@ -105,14 +106,14 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
                 new SamlTheoryData {
                     Token = null,
                     XmlReader = XmlUtilities.CreateXmlReader(ReferenceTokens.SamlToken_Valid),
-                    ExpectedException = new ArgumentNullException("token"),
+                    ExpectedException = new ArgumentNullException("", "IDX10000:"),
                     TestId = nameof(ReadToken) + "_" + "Null token",
                 },
 
                 new SamlTheoryData {
                     Token = ReferenceTokens.SamlToken_Valid,
                     XmlReader = null,
-                    ExpectedException = new ArgumentNullException("reader"),
+                    ExpectedException = new ArgumentNullException("", "IDX10000:"),
                     TestId = nameof(ReadToken) + "_" + "Null XmlReader",
                 },
 
@@ -132,6 +133,7 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
             }
             catch (Exception ex) when (theoryData.ExpectedException != null) {
                 Assert.IsType(theoryData.ExpectedException.GetType(), ex);
+                Assert.StartsWith(theoryData.ExpectedException.Message, ex.Message);
             }
         }
 
@@ -151,14 +153,14 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
                     new SamlTheoryData {
                         Token = null,
                         ValidationParameters = validationParameters,
-                        ExpectedException = new ArgumentNullException("token"),
+                        ExpectedException = new ArgumentNullException("", "IDX10000:"),
                         TestId = nameof(ValidateToken) + "_" + "Null-Token",
                     },
 
                     new SamlTheoryData {
                         Token = ReferenceTokens.SamlToken_Valid,
                         ValidationParameters = null,
-                        ExpectedException = new ArgumentNullException("validationParameters"),
+                        ExpectedException = new ArgumentNullException("", "IDX10000:"),
                         TestId = nameof(ValidateToken) + "_" + "Null-TokenValidationParameters",
                     },
 
@@ -194,6 +196,7 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
             }
             catch (Exception ex) when (theoryData.ExpectedException != null) {
                 Assert.IsType(theoryData.ExpectedException.GetType(), ex);
+                Assert.StartsWith(theoryData.ExpectedException.Message, ex.Message);
             }
         }
 
@@ -213,21 +216,21 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
                     new SamlTheoryData {
                         XmlReader = null,
                         ValidationParameters = validationParameters,
-                        ExpectedException = new ArgumentNullException("xmlReader"),
+                        ExpectedException = new ArgumentNullException("", "IDX10000:"),
                         TestId = nameof(ValidateXmlToken) + "_" + "Null-XmlReader",
                     },
 
                     new SamlTheoryData {
                         XmlReader = XmlUtilities.CreateXmlReader(ReferenceTokens.Saml2Token_Valid),
                         ValidationParameters = validationParameters,
-                        ExpectedException = new Microsoft.IdentityModel.Xml.XmlReadException(),
+                        ExpectedException = new Microsoft.IdentityModel.Xml.XmlReadException("IDX30011:"),
                         TestId = nameof(ValidateXmlToken) + "_" + "InvalidSaml2Token",
                     },
 
                     new SamlTheoryData {
                         XmlReader = XmlUtilities.CreateXmlReader(ReferenceTokens.SamlToken_Valid),
                         ValidationParameters = null,
-                        ExpectedException = new ArgumentNullException("validationParameters"),
+                        ExpectedException = new ArgumentNullException("", "IDX10000:"),
                         TestId = nameof(ValidateXmlToken) + "_" + "Null-TokenValidationParameters",
                     },
 
@@ -266,6 +269,7 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
             }
             catch (Exception ex) when (theoryData.ExpectedException != null) {
                 Assert.IsType(theoryData.ExpectedException.GetType(), ex);
+                Assert.StartsWith(theoryData.ExpectedException.Message, ex.Message);
             }
         }
 
@@ -296,14 +300,14 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
                     new SamlTheoryData {
                         SecurityToken = null,
                         ValidationParameters = validationParameters,
-                        ExpectedException = new ArgumentNullException("securityToken", "IDX10000:"),
+                        ExpectedException = new ArgumentNullException("", "IDX10000:"),
                         TestId = nameof(WriteToken) + "_" + "Null securityToken",
                     },
 
                     new SamlTheoryData {
                         SecurityToken = ReferenceJwt.JwtToken,
                         ValidationParameters = validationParameters,
-                        ExpectedException = new ArgumentException("IDX13400:"),
+                        ExpectedException = new ArgumentException("IDX11400:"),
                         TestId = nameof(WriteToken) + "_" + nameof(ReferenceJwt.JwtToken),
                     },
 
@@ -341,6 +345,7 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
             }
             catch (Exception ex) when (theoryData.ExpectedException != null) {
                 Assert.IsType(theoryData.ExpectedException.GetType(), ex);
+                Assert.StartsWith(theoryData.ExpectedException.Message, ex.Message);
             }
         }
 
@@ -363,21 +368,21 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
                     new SamlTheoryData {
                         XmlWriter = XmlDictionaryWriter.CreateTextWriter(new MemoryStream()),
                         SecurityToken = null,
-                        ExpectedException = new ArgumentNullException("securityToken", "IDX10000:"),
+                        ExpectedException = new ArgumentNullException("", "IDX10000:"),
                         TestId = nameof(WriteTokenXml) + "_" + "Null securityToken",
                     },
 
                     new SamlTheoryData {
                         XmlWriter = null,
                         SecurityToken = ReferenceJwt.JwtToken,
-                        ExpectedException = new ArgumentNullException("writer", "IDX10000:"),
+                        ExpectedException = new ArgumentNullException("", "IDX10000:"),
                         TestId = nameof(WriteTokenXml) + "_" + "Null XmlWriter",
                     },
 
                     new SamlTheoryData {
                         XmlWriter = XmlDictionaryWriter.CreateTextWriter(new MemoryStream()),
                         SecurityToken = ReferenceJwt.JwtToken,
-                        ExpectedException = new ArgumentException("IDX13150:"),
+                        ExpectedException = new ArgumentException("IDX11400:"),
                         TestId = nameof(WriteTokenXml) + "_" + nameof(ReferenceJwt.JwtToken),
                     },
 
@@ -402,6 +407,67 @@ namespace Abc.IdentityModel.Tokens.Saml.UnitTests {
                 });
 
                 return theoryData;
+            }
+        }
+
+
+        [Theory, MemberData(nameof(CreateAttributeTheoryData))]
+        public void CreateAttribute(SamlTheoryData theoryData) {
+            try {
+                var attribute = (theoryData.Handler as SamlSecurityTokenHandlerPublic).CreateAttributePublic(theoryData.Claim);
+
+                Assert.Equal(attribute.Name, theoryData.SamlAttribute.Name);
+                Assert.Equal(attribute.Namespace, theoryData.SamlAttribute.Namespace);
+                Assert.Equal(attribute.Values, theoryData.SamlAttribute.Values);
+                Assert.Equal(attribute.AttributeValueXsiType, theoryData.SamlAttribute.AttributeValueXsiType);
+                Assert.Equal(attribute.ClaimType, theoryData.SamlAttribute.ClaimType);
+                Assert.Equal(attribute.OriginalIssuer, theoryData.SamlAttribute.OriginalIssuer);
+            }
+            catch (Exception ex) when (theoryData.ExpectedException != null) {
+                Assert.IsType(theoryData.ExpectedException.GetType(), ex);
+                Assert.StartsWith(theoryData.ExpectedException.Message, ex.Message);
+            }
+        }
+
+        public static TheoryData<SamlTheoryData> CreateAttributeTheoryData {
+            get {
+                return new TheoryData<SamlTheoryData>
+                {
+                    new SamlTheoryData
+                    {
+                        ExpectedException = new ArgumentNullException("", "IDX10000:"),
+                        Handler = new SamlSecurityTokenHandlerPublic(),
+                        TestId = nameof(CreateAttribute) + "_" + "Null claim",
+                        Claim = null,
+                    },
+                    new SamlTheoryData
+                    {
+                        ExpectedException = new SamlSecurityTokenException("IDX11523:"),
+                        Handler = new SamlSecurityTokenHandlerPublic(),
+                        TestId = nameof(CreateAttribute) + "_" + "claim type without namespace",
+                        Claim = new Claim("sub", "value"),
+                    },
+                    new SamlTheoryData
+                    {
+                        Handler = new SamlSecurityTokenHandlerPublic(),
+                        TestId = nameof(CreateAttribute),
+                        Claim = new Claim(ClaimTypes.Name, "value", ClaimValueTypes.String),
+                        SamlAttribute = new SamlAttribute("http://schemas.xmlsoap.org/ws/2005/05/identity/claims", "name", "value")
+                    },
+                    new SamlTheoryData
+                    {
+                        Handler = new SamlSecurityTokenHandlerPublic(),
+                        TestId = nameof(CreateAttribute) + "_" + "with OriginalIssuer",
+                        Claim = new Claim(ClaimTypes.Name, "value", ClaimValueTypes.String, null, "issuer"),
+                        SamlAttribute = new SamlAttribute("http://schemas.xmlsoap.org/ws/2005/05/identity/claims", "name", "value") { OriginalIssuer = "issuer" },
+                    },
+                };
+            }
+        }
+
+        private class SamlSecurityTokenHandlerPublic : SamlSecurityTokenHandler {
+            public SamlAttribute CreateAttributePublic(Claim claim) {
+                return base.CreateAttribute(claim);
             }
         }
     }
