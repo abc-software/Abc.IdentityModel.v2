@@ -26,7 +26,8 @@ namespace Abc.IdentityModel.Xml {
         /// Initializes a new instance of the <see cref="EncryptedDataReadException"/> class.
         /// </summary>
         /// <param name="message">Additional information to be included in the exception and displayed to user.</param>
-        public EncryptedDataReadException(string message) : base(message) {
+        public EncryptedDataReadException(string message)
+            : base(message) {
         }
 
         /// <summary>
@@ -34,7 +35,8 @@ namespace Abc.IdentityModel.Xml {
         /// </summary>
         /// <param name="message">Additional information to be included in the exception and displayed to user.</param>
         /// <param name="innerException">A <see cref="Exception"/> that represents the root cause of the exception.</param>
-        public EncryptedDataReadException(string message, Exception innerException) : base(message, innerException) {
+        public EncryptedDataReadException(string message, Exception innerException)
+            : base(message, innerException) {
         }
 
         /// <summary>
@@ -42,7 +44,11 @@ namespace Abc.IdentityModel.Xml {
         /// </summary>
         /// <param name="info">the <see cref="SerializationInfo"/> that holds the serialized object data.</param>
         /// <param name="context">The contextual information about the source or destination.</param>
-        protected EncryptedDataReadException(SerializationInfo info, StreamingContext context) : base(info, context) {
+#if NET8_0_OR_GREATER
+        [Obsolete(DiagnosticId = "SYSLIB0051")]
+#endif
+        protected EncryptedDataReadException(SerializationInfo info, StreamingContext context)
+            : base(info, context) {
         }
     }
 }

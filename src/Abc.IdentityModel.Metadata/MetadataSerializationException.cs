@@ -45,6 +45,9 @@ namespace Abc.IdentityModel.Metadata {
         /// </summary>
         /// <param name="info">A <see cref="SerializationInfo" /> object that holds the serialized object data.</param>
         /// <param name="context">A <see cref="StreamingContext" /> object that contains the contextual information about the source or destination.</param>
+#if NET8_0_OR_GREATER
+        [Obsolete(DiagnosticId = "SYSLIB0051")]
+#endif
         protected MetadataSerializationException(SerializationInfo info, StreamingContext context)
             : base(info, context) {
         }

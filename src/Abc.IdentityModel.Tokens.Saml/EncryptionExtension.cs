@@ -146,26 +146,36 @@ namespace Abc.IdentityModel.Tokens {
                 throw LogExceptionMessage(new SecurityTokenEncryptionFailedException(FormatInvariant(LogMessages.IDX50601, MarkAsNonPII(encryptingCredentials.Alg), encryptingCredentials.Key)));
             }
 
-            byte[] keyBytes;
-            // only 128, 384 and 512 AesCbc
+            // only 128, 384 and 256 AesCbc
+            int keySizeInBits;
             if (SecurityAlgorithms.Aes128Encryption.Equals(encryptingCredentials.Enc, StringComparison.Ordinal)) {
-                keyBytes = JwtTokenUtilities.GenerateKeyBytes(128);
+                keySizeInBits = 128;
             }
             else if (SecurityAlgorithms.Aes192Encryption.Equals(encryptingCredentials.Enc, StringComparison.Ordinal)) {
-                keyBytes = JwtTokenUtilities.GenerateKeyBytes(192);
+                keySizeInBits = 192;
             }
             else if (SecurityAlgorithms.Aes256Encryption.Equals(encryptingCredentials.Enc, StringComparison.Ordinal)) {
-                keyBytes = JwtTokenUtilities.GenerateKeyBytes(256);
+                keySizeInBits = 256;
             }
             else {
                 throw LogExceptionMessage(
                     new SecurityTokenEncryptionFailedException(FormatInvariant(LogMessages.IDX50617, MarkAsNonPII(SecurityAlgorithms.Aes128CbcHmacSha256), MarkAsNonPII(SecurityAlgorithms.Aes192CbcHmacSha384), MarkAsNonPII(SecurityAlgorithms.Aes256CbcHmacSha512), MarkAsNonPII(encryptingCredentials.Enc))));
             }
 
+            var keyBytes = GenerateKeyBytes(keySizeInBits);
+
             var kwProvider = cryptoProviderFactory.CreateKeyWrapProvider(encryptingCredentials.Key, encryptingCredentials.Alg);
             wrappedKey = kwProvider.WrapKey(keyBytes);
 
             return new SymmetricSecurityKey(keyBytes);
+        }
+
+        private static byte[] GenerateKeyBytes(int sizeInBits) {
+            var sizeInBytes = (sizeInBits + 7) / 8;
+            var key = new byte[sizeInBytes];
+            using RandomNumberGenerator randomNumberGenerator = RandomNumberGenerator.Create();
+            randomNumberGenerator.GetBytes(key);
+            return key;
         }
 
         private static AuthenticatedEncryptionResult EncryptWithAesCbc(SecurityKey key, byte[] plainText, byte[] iv) {
