@@ -14,11 +14,12 @@ namespace Abc.IdentityModel.Xml {
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// Constants for XML Encryption
+    /// Constants for XML Encryption.
     /// </summary>
     /// <remarks>
-    /// Definitions for namespace, attributes and elements as defined in http://www.w3.org/TR/xmlenc-core1/
+    /// Definitions for namespace, attributes and elements as defined in http://www.w3.org/TR/xmlenc-core1/.
     /// </remarks>
+    [SuppressMessage("Microsoft.StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed. Constants is not commented.")]
     [ExcludeFromCodeCoverage]
     public class XmlEncryptionConstants {
         public const string Namespace = "http://www.w3.org/2001/04/xmlenc#";
@@ -66,7 +67,7 @@ namespace Abc.IdentityModel.Xml {
             public static readonly Uri EncryptedKey = new Uri(EncryptedKeyString);
 
             internal const string ContentString = Namespace + "Content";
-            internal const string ElementString = Namespace +  "Element";
+            internal const string ElementString = Namespace + "Element";
             internal const string EncryptedKeyString = Namespace + "EncryptedKey";
 
             private EncryptedDataTypes() {
@@ -81,7 +82,6 @@ namespace Abc.IdentityModel.Xml {
             private Encodings() {
             }
         }
-
     }
 }
 

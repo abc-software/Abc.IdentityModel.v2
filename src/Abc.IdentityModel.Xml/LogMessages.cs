@@ -9,7 +9,7 @@
 
 namespace Abc.IdentityModel.Xml {
     /// <summary>
-    /// Log messages and codes
+    /// Log messages and codes.
     /// </summary>
     /// <remarks>
     /// Range: 51000 - 51999

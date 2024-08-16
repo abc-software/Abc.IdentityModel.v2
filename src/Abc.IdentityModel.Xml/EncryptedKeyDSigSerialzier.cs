@@ -14,7 +14,7 @@ namespace Abc.IdentityModel.Xml {
     using static Microsoft.IdentityModel.Logging.LogHelper;
 
     /// <summary>
-    /// Reads and writes XML conforming to https://www.w3.org/TR/2001/PR-xmldsig-core-20010820
+    /// Reads and writes XML conforming to https://www.w3.org/TR/2001/PR-xmldsig-core-20010820.
     /// </summary>
     public class EncryptedKeyDSigSerialzier : DSigSerializer {
         /// <summary>
@@ -26,11 +26,11 @@ namespace Abc.IdentityModel.Xml {
         }
 
         /// <summary>
-        /// Returns the <see cref="EncryptionSerializer"/>.
+        /// Gets the <see cref="EncryptionSerializer"/>.
         /// </summary>
         public EncryptionSerializer EncryptionSerializer { get; }
 
-        ///<inheritdoc/>
+        /// <inheritdoc/>
         public override void WriteKeyInfo(XmlWriter writer, KeyInfo keyInfo) {
             if (keyInfo is EncryptedKeyKeyInfo encryptedKeyInfo) {
                 writer.WriteStartElement(XmlSignatureConstants.Elements.KeyInfo, XmlSignatureConstants.Namespace);
@@ -42,7 +42,7 @@ namespace Abc.IdentityModel.Xml {
             base.WriteKeyInfo(writer, keyInfo);
         }
 
-        ///<inheritdoc/>
+        /// <inheritdoc/>
         public override KeyInfo ReadKeyInfo(XmlReader reader) {
             XmlUtil.CheckReaderOnEntry(reader, XmlSignatureConstants.Elements.KeyInfo, XmlSignatureConstants.Namespace);
 

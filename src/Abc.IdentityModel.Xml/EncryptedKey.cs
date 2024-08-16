@@ -20,7 +20,7 @@ namespace Abc.IdentityModel.Xml {
         }
 
         /// <summary>
-        /// Gets the associated user readable name with the key value.
+        /// Gets or sets the associated user readable name with the key value.
         /// </summary>
         /// <value>
         /// The associated user readable name with the key value.

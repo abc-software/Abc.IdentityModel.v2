@@ -36,7 +36,7 @@ namespace Abc.IdentityModel.Xml {
         }
     }
 
-    internal static class XmlReaderExtensions { 
+    internal static class XmlReaderExtensions {
         /// <summary>
         /// Converts a node's content to a array of Base64 bytes..
         /// </summary>

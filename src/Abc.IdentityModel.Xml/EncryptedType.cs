@@ -18,7 +18,7 @@ namespace Abc.IdentityModel.Xml {
     /// <remarks>https://www.w3.org/TR/xmlenc-core/#sec-EncryptedType</remarks>
     public abstract class EncryptedType {
         private CipherData cipherData;
-        //private readonly List<string> encryptionProperties = new List<string>();
+        // private readonly List<string> encryptionProperties = new List<string>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EncryptedType"/> class.
@@ -67,12 +67,12 @@ namespace Abc.IdentityModel.Xml {
         public EncryptionMethod EncryptionMethod { get; set; }
 
         /// <summary>
-        /// Gets of sets the <see cref="KeyInfo"/> element in XML encryption.
+        /// Gets or sets the <see cref="KeyInfo"/> element in XML encryption.
         /// </summary>
         public KeyInfo KeyInfo { get; set; }
 
         /// <summary>
-        /// Gets the <see cref="CipherData"/> value for an instance of an <see cref="EncryptedType"/> class.
+        /// Gets or sets the <see cref="CipherData"/> value for an instance of an <see cref="EncryptedType"/> class.
         /// </summary>
         public CipherData CipherData {
             get => cipherData;

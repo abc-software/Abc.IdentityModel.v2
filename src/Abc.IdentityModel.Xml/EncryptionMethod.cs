@@ -25,12 +25,12 @@ namespace Abc.IdentityModel.Xml {
         }
 
         /// <summary>
-        /// Gets or sets the algorithm Uniform Resource Identifier(URI).
+        /// Gets the algorithm Uniform Resource Identifier(URI).
         /// </summary>
         /// <value>
         /// The algorithm Uniform Resource Identifier(URI).
         /// </value>
-        public Uri Algorithm { get; } 
+        public Uri Algorithm { get; }
 
         /// <summary>
         /// Gets or sets the size of the key.

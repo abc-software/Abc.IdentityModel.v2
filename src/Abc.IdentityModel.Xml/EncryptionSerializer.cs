@@ -14,6 +14,9 @@ namespace Abc.IdentityModel.Xml {
     using System.Xml;
     using static Microsoft.IdentityModel.Logging.LogHelper;
 
+    /// <summary>
+    /// Serializes and deserializes <see cref="EncryptedData"/> objects into and from XML documents.
+    /// </summary>
     public class EncryptionSerializer {
         private static EncryptionSerializer encryptionSerializer;
         private DSigSerializer dsigSerializer;
@@ -23,7 +26,7 @@ namespace Abc.IdentityModel.Xml {
         }
 
         /// <summary>
-        /// Returns the default <see cref="EncryptionSerializer" /> instance.
+        /// Gets or sets the default <see cref="EncryptionSerializer" /> instance.
         /// </summary>
         public static EncryptionSerializer Default {
             get => encryptionSerializer;
@@ -31,7 +34,7 @@ namespace Abc.IdentityModel.Xml {
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="DSigSerializer"/> to use for reading/writing the <see cref="Signature"/>
+        /// Gets or sets the <see cref="DSigSerializer"/> to use for reading/writing the <see cref="Signature"/>.
         /// </summary>
         /// <exception cref="ArgumentNullException">if value is null.</exception>
         /// <remarks>Will be passed to readers that process xmlDsig such as <see cref="EnvelopedSignatureReader"/> and <see cref="EnvelopedSignatureWriter"/>.</remarks>
@@ -61,6 +64,12 @@ namespace Abc.IdentityModel.Xml {
             return Uri.TryCreate(uriString, uriKind, out Uri _);
         }
 
+        /// <summary>
+        /// Read the &lt;xenc:EncryptedData> element.
+        /// </summary>
+        /// <param name="reader">A <see cref="XmlReader"/> positioned at a <see cref="EncryptedData"/> element.</param>
+        /// <returns>A <see cref="EncryptedData"/> instance.</returns>
+        /// <exception cref="ArgumentNullException">if <paramref name="reader"/> is null.</exception>
         public EncryptedData ReadEncryptedData(XmlReader reader) {
             if (reader is null)
                 throw LogArgumentNullException(nameof(reader));
@@ -77,6 +86,13 @@ namespace Abc.IdentityModel.Xml {
             return encryptedData;
         }
 
+        /// <summary>
+        /// Writes the &lt;xenc:EncryptedData> element.
+        /// </summary>
+        /// <param name="writer">A <see cref="XmlWriter"/> to serialize the <see cref="EncryptedData"/>.</param>
+        /// <param name="encryptedData">The <see cref="EncryptedData"/> to serialize.</param>
+        /// <exception cref="ArgumentNullException">if <paramref name="writer"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">if <paramref name="encryptedData"/> is null.</exception>
         public void WriteEncryptedData(XmlWriter writer, EncryptedData encryptedData) {
             if (writer is null)
                 throw LogArgumentNullException(nameof(writer));
@@ -94,6 +110,12 @@ namespace Abc.IdentityModel.Xml {
             writer.WriteEndElement();
         }
 
+        /// <summary>
+        /// Read the &lt;xenc:EncryptedKey> element.
+        /// </summary>
+        /// <param name="reader">A <see cref="XmlReader"/> positioned at a <see cref="EncryptedKey"/> element.</param>
+        /// <returns>A <see cref="EncryptedKey"/> instance.</returns>
+        /// <exception cref="ArgumentNullException">if <paramref name="reader"/> is null.</exception>
         public EncryptedKey ReadEncryptedKey(XmlReader reader) {
             if (reader is null)
                 throw LogArgumentNullException(nameof(reader));
@@ -125,6 +147,13 @@ namespace Abc.IdentityModel.Xml {
             return encryptedKey;
         }
 
+        /// <summary>
+        /// Writes the &lt;xenc:EncryptedKey> element.
+        /// </summary>
+        /// <param name="writer">A <see cref="XmlWriter"/> to serialize the <see cref="EncryptedKey"/>.</param>
+        /// <param name="encryptedKey">The <see cref="EncryptedKey"/> to serialize.</param>
+        /// <exception cref="ArgumentNullException">if <paramref name="writer"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">if <paramref name="encryptedKey"/> is null.</exception>
         public void WriteEncryptedKey(XmlWriter writer, EncryptedKey encryptedKey) {
             if (writer is null)
                 throw LogArgumentNullException(nameof(writer));
@@ -157,7 +186,16 @@ namespace Abc.IdentityModel.Xml {
             writer.WriteEndElement();
         }
 
+        /// <summary>
+        /// Read the &lt;xenc:ReferenceList> element.
+        /// </summary>
+        /// <param name="reader">A <see cref="XmlReader"/> positioned at a <see cref="ReferenceList"/> element.</param>
+        /// <returns>A <see cref="ReferenceList"/> instance.</returns>
+        /// <exception cref="ArgumentNullException">if <paramref name="reader"/> is null.</exception>
         protected ReferenceList ReadReferenceList(XmlReader reader) {
+            if (reader is null)
+                throw LogArgumentNullException(nameof(reader));
+
             XmlUtil.CheckReaderOnEntry(reader, XmlEncryptionConstants.ElementNames.ReferenceList, XmlEncryptionConstants.Namespace);
 
             var referenceList = new ReferenceList();
@@ -228,7 +266,20 @@ namespace Abc.IdentityModel.Xml {
             return referenceList;
         }
 
+        /// <summary>
+        /// Writes the &lt;xenc:ReferenceList> element.
+        /// </summary>
+        /// <param name="writer">A <see cref="XmlWriter"/> to serialize the <see cref="ReferenceList"/>.</param>
+        /// <param name="referenceList">The <see cref="ReferenceList"/> to serialize.</param>
+        /// <exception cref="ArgumentNullException">if <paramref name="writer"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">if <paramref name="referenceList"/> is null.</exception>
         protected void WriteReferenceList(XmlWriter writer, ReferenceList referenceList) {
+            if (writer == null)
+                throw LogArgumentNullException(nameof(writer));
+
+            if (referenceList == null)
+                throw LogArgumentNullException(nameof(referenceList));
+
             // <ReferenceList>
             writer.WriteStartElement(XmlEncryptionConstants.Prefix, XmlEncryptionConstants.ElementNames.ReferenceList, XmlEncryptionConstants.Namespace);
 
@@ -242,7 +293,6 @@ namespace Abc.IdentityModel.Xml {
                 writer.WriteAttributeString(XmlEncryptionConstants.AttributeNames.Uri, item.AbsoluteUri);
                 writer.WriteEndElement();
             }
-
 
             // <KeyReference> 0-oo
             foreach (var item in referenceList.KeyReferences) {
@@ -259,7 +309,19 @@ namespace Abc.IdentityModel.Xml {
             writer.WriteEndElement();
         }
 
+        /// <summary>
+        /// Read the &lt;xenc:EncryptedType> element.
+        /// </summary>
+        /// <param name="reader">A <see cref="XmlReader"/> positioned at a <see cref="EncryptedType"/> element.</param>
+        /// <param name="encryptedType">A <see cref="EncryptedType"/> instance.</param>
+        /// <exception cref="ArgumentNullException">if <paramref name="reader"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">if <paramref name="encryptedType"/> is null.</exception>
         protected void ReadEncryptedType(XmlReader reader, EncryptedType encryptedType) {
+            if (reader is null)
+                throw LogArgumentNullException(nameof(reader));
+
+            if (encryptedType is null)
+                throw LogArgumentNullException(nameof(encryptedType));
 
             // @Id
             encryptedType.Id = reader.GetAttribute(XmlEncryptionConstants.AttributeNames.Id);
@@ -294,12 +356,21 @@ namespace Abc.IdentityModel.Xml {
             encryptedType.CipherData = ReadChiperData(reader);
         }
 
+        /// <summary>
+        /// Read the &lt;xenc:EncryptionMethod> element.
+        /// </summary>
+        /// <param name="reader">A <see cref="XmlReader"/> positioned at a <see cref="EncryptionMethod"/> element.</param>
+        /// <returns>A <see cref="EncryptionMethod"/> instance.</returns>
+        /// <exception cref="ArgumentNullException">if <paramref name="reader"/> is null.</exception>
         protected EncryptionMethod ReadEncryptionMethod(XmlReader reader) {
+            if (reader is null)
+                throw LogArgumentNullException(nameof(reader));
+
             XmlUtil.CheckReaderOnEntry(reader, XmlEncryptionConstants.ElementNames.EncryptionMethod, XmlEncryptionConstants.Namespace);
 
             bool isEmptyElement = reader.IsEmptyElement;
 
-            // Algorithm 
+            // Algorithm
             var attribute = reader.GetAttribute(XmlEncryptionConstants.AttributeNames.Algorithm);
             if (attribute == null) {
                 throw LogReadException(LogMessages.IDX51106, XmlEncryptionConstants.ElementNames.EncryptionMethod, XmlEncryptionConstants.AttributeNames.Algorithm);
@@ -347,35 +418,39 @@ namespace Abc.IdentityModel.Xml {
             return encryptionMethod;
         }
 
+        /// <summary>
+        /// Writes the &lt;xenc:EncryptedType> element.
+        /// </summary>
+        /// <param name="writer">A <see cref="XmlWriter"/> to serialize the <see cref="EncryptedType"/>.</param>
+        /// <param name="encryptedType">The <see cref="EncryptedType"/> to serialize.</param>
+        /// <exception cref="ArgumentNullException">if <paramref name="writer"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">if <paramref name="encryptedType"/> is null.</exception>
         protected void WriteEncryptedType(XmlWriter writer, EncryptedType encryptedType) {
-            if (writer is null) {
+            if (writer == null)
                 throw LogArgumentNullException(nameof(writer));
-            }
+
+            if (encryptedType == null)
+                throw LogArgumentNullException(nameof(encryptedType));
 
             // @Id - optional
-            if (!string.IsNullOrEmpty(encryptedType.Id)) {
+            if (!string.IsNullOrEmpty(encryptedType.Id))
                 writer.WriteAttributeString(XmlEncryptionConstants.AttributeNames.Id, encryptedType.Id);
-            }
 
             // @Type - optional
-            if (encryptedType.Type != null) {
+            if (encryptedType.Type != null)
                 writer.WriteAttributeString(XmlEncryptionConstants.AttributeNames.Type, encryptedType.Type.AbsoluteUri);
-            }
 
             // @MimeType - optional
-            if (encryptedType.MimeType != null) {
+            if (encryptedType.MimeType != null)
                 writer.WriteAttributeString(XmlEncryptionConstants.AttributeNames.MimeType, encryptedType.MimeType);
-            }
 
             // @Encoding - optional
-            if (encryptedType.Encoding != null) {
+            if (encryptedType.Encoding != null)
                 writer.WriteAttributeString(XmlEncryptionConstants.AttributeNames.Encoding, encryptedType.Encoding.AbsoluteUri);
-            }
 
             // Write out encryption method
-            if (encryptedType.EncryptionMethod != null) {
+            if (encryptedType.EncryptionMethod != null)
                 WriteEncryptionMethod(writer, encryptedType.EncryptionMethod);
-            }
 
             if (encryptedType.KeyInfo != null) {
                 DSigSerializer.WriteKeyInfo(writer, encryptedType.KeyInfo);
@@ -384,7 +459,20 @@ namespace Abc.IdentityModel.Xml {
             WriteChiperData(writer, encryptedType.CipherData);
         }
 
+        /// <summary>
+        /// Writes the &lt;xenc:EncryptionMethod> element.
+        /// </summary>
+        /// <param name="writer">A <see cref="XmlWriter"/> to serialize the <see cref="EncryptionMethod"/>.</param>
+        /// <param name="encryptionMethod">The <see cref="EncryptionMethod"/> to serialize.</param>
+        /// <exception cref="ArgumentNullException">if <paramref name="writer"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">if <paramref name="encryptionMethod"/> is null.</exception>
         protected void WriteEncryptionMethod(XmlWriter writer, EncryptionMethod encryptionMethod) {
+            if (writer == null)
+                throw LogArgumentNullException(nameof(writer));
+
+            if (encryptionMethod == null)
+                throw LogArgumentNullException(nameof(encryptionMethod));
+
             writer.WriteStartElement(XmlEncryptionConstants.Prefix, XmlEncryptionConstants.ElementNames.EncryptionMethod, XmlEncryptionConstants.Namespace);
             writer.WriteAttributeString(XmlEncryptionConstants.AttributeNames.Algorithm, null, encryptionMethod.Algorithm.AbsoluteUri);
 
@@ -398,7 +486,7 @@ namespace Abc.IdentityModel.Xml {
                 writer.WriteEndElement();
             }
 
-            if (encryptionMethod.Algorithm == new Uri(SecurityAlgorithms.RsaOaepKeyWrap) 
+            if (encryptionMethod.Algorithm == new Uri(SecurityAlgorithms.RsaOaepKeyWrap)
                 && encryptionMethod.MaskGenerationFunction != null) {
                 writer.WriteStartElement(XmlEncryption11Constants.Prefix, XmlEncryption11Constants.ElementNames.MaskGenerationFunction, XmlEncryption11Constants.Namespace);
                 writer.WriteAttributeString(XmlEncryption11Constants.AttributeNames.Algorithm, encryptionMethod.MaskGenerationFunction.AbsoluteUri);
@@ -417,10 +505,15 @@ namespace Abc.IdentityModel.Xml {
             writer.WriteEndElement();
         }
 
+        /// <summary>
+        /// Read the &lt;xenc:CipherData> element.
+        /// </summary>
+        /// <param name="reader">A <see cref="XmlReader"/> positioned at a <see cref="CipherData"/> element.</param>
+        /// <returns>A <see cref="CipherData"/> instance.</returns>
+        /// <exception cref="ArgumentNullException">if <paramref name="reader"/> is null.</exception>
         protected virtual CipherData ReadChiperData(XmlReader reader) {
-            if (reader is null) {
+            if (reader is null)
                 throw LogArgumentNullException(nameof(reader));
-            }
 
             reader.MoveToContent();
 
@@ -443,6 +536,13 @@ namespace Abc.IdentityModel.Xml {
             return new CipherData(chiperValue);
         }
 
+        /// <summary>
+        /// Writes the &lt;xenc:CipherData> element.
+        /// </summary>
+        /// <param name="writer">A <see cref="XmlWriter"/> to serialize the <see cref="CipherData"/>.</param>
+        /// <param name="cipherData">The <see cref="CipherData"/> to serialize.</param>
+        /// <exception cref="ArgumentNullException">if <paramref name="writer"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">if <paramref name="cipherData"/> is null.</exception>
         protected virtual void WriteChiperData(XmlWriter writer, CipherData cipherData) {
             if (writer is null)
                 throw LogArgumentNullException(nameof(writer));

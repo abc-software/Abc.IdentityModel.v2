@@ -13,11 +13,12 @@ namespace Abc.IdentityModel.Xml {
     using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
-    /// Constants for XML Encryption
+    /// Constants for XML Encryption.
     /// </summary>
     /// <remarks>
-    /// Definitions for namespace, attributes and elements as defined in http://www.w3.org/TR/xmlenc-core1/
+    /// Definitions for namespace, attributes and elements as defined in http://www.w3.org/TR/xmlenc-core1/.
     /// </remarks>
+    [SuppressMessage("Microsoft.StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed. Constants is not commented.")]
     [ExcludeFromCodeCoverage]
     public class XmlEncryption11Constants {
         public const string Namespace = "http://www.w3.org/2009/xmlenc11#";

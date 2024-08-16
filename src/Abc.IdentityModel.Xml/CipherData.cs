@@ -1,5 +1,5 @@
 ﻿// ----------------------------------------------------------------------------
-// <copyright file="ChiperData.cs" company="ABC software Ltd">
+// <copyright file="CipherData.cs" company="ABC software Ltd">
 //    Copyright © ABC SOFTWARE. All rights reserved.
 //
 //    Licensed under the Apache License, Version 2.0.
@@ -17,7 +17,7 @@ namespace Abc.IdentityModel.Xml {
     /// <remarks>https://www.w3.org/TR/xmlenc-core/#sec-CipherData</remarks>
     public class CipherData {
         /// <summary>
-        /// Initializes an instance of <see cref="CipherData"/> with cipher value.
+        /// Initializes a new instance of the <see cref="CipherData"/> class with cipher value.
         /// </summary>
         /// <param name="cipherValue">The cipher value.</param>
         /// <exception cref="ArgumentNullException">if <paramref name="cipherValue"/> is null.</exception>
@@ -26,7 +26,7 @@ namespace Abc.IdentityModel.Xml {
         }
 
         /// <summary>
-        /// Gets or sets the cipher value.
+        /// Gets the cipher value.
         /// </summary>
         /// <value>
         /// The cipher value.
