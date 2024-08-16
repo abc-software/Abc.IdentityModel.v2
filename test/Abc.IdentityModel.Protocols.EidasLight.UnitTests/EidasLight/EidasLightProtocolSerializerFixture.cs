@@ -16,7 +16,7 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
         public void ReadEidasAuthorizationRequest() {
             XmlReaderSettings settings = new XmlReaderSettings();
 
-            XmlTextReader textReader = new XmlTextReader(@"..\..\..\_Data\EidasLightRequest.xml");
+            XmlTextReader textReader = new XmlTextReader(Path.Combine("..", "..", "..", "_Data", "EidasLightRequest.xml"));
             XmlReader reader = XmlReader.Create(textReader, settings);
 
             var serializer = new EidasLightProtocolSerializer();
@@ -59,7 +59,7 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
         public void ReadEidasAuthorizationRequestFull() {
             XmlReaderSettings settings = new XmlReaderSettings();
 
-            XmlTextReader textReader = new XmlTextReader(@"..\..\..\_Data\EidasLightRequestFull.xml");
+            XmlTextReader textReader = new XmlTextReader(Path.Combine("..", "..", "..", "_Data", "EidasLightRequestFull.xml"));
             XmlReader reader = XmlReader.Create(textReader, settings);
 
             var serializer = new EidasLightProtocolSerializer();
@@ -109,7 +109,7 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
         public void ReadEidasAuthorizationRequestMin() {
             XmlReaderSettings settings = new XmlReaderSettings();
 
-            XmlTextReader textReader = new XmlTextReader(@"..\..\..\_Data\EidasLightRequestMin.xml");
+            XmlTextReader textReader = new XmlTextReader(Path.Combine("..", "..", "..", "_Data", "EidasLightRequestMin.xml"));
             XmlReader reader = XmlReader.Create(textReader, settings);
 
             var serializer = new EidasLightProtocolSerializer();
@@ -124,7 +124,7 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
 
             var eidasLightMessage = message as EidasLightRequest;
 
-            Assert.Equal(1, eidasLightMessage.LevelsOfAssurance.Count);
+            Assert.Single(eidasLightMessage.LevelsOfAssurance);
             Assert.Equal(new Uri("http://uri1"), eidasLightMessage.LevelsOfAssurance.First().Value);
             Assert.Equal(LevelOfAssuranceType.Notified, eidasLightMessage.LevelsOfAssurance.First().Type);
 
@@ -147,7 +147,7 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
         public void ReadEidasAuthorizationRequestEmpty() {
             XmlReaderSettings settings = new XmlReaderSettings();
 
-            XmlTextReader textReader = new XmlTextReader(@"..\..\..\_Data\EidasLightRequestEmpty.xml");
+            XmlTextReader textReader = new XmlTextReader(Path.Combine("..", "..", "..", "_Data", "EidasLightRequestEmpty.xml"));
             XmlReader reader = XmlReader.Create(textReader, settings);
 
             var serializer = new EidasLightProtocolSerializer();
@@ -158,7 +158,7 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
         public void ReadEidasAuthorizationResponseFull() {
             XmlReaderSettings settings = new XmlReaderSettings();
 
-            XmlTextReader textReader = new XmlTextReader(@"..\..\..\_Data\EidasLightResponseFull.xml");
+            XmlTextReader textReader = new XmlTextReader(Path.Combine("..", "..", "..", "_Data", "EidasLightResponseFull.xml"));
             XmlReader reader = XmlReader.Create(textReader, settings);
 
             var serializer = new EidasLightProtocolSerializer();
@@ -208,7 +208,7 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
         public void ReadEidasAuthorizationResponseMin() {
             XmlReaderSettings settings = new XmlReaderSettings();
 
-            XmlTextReader textReader = new XmlTextReader(@"..\..\..\_Data\EidasLightResponseMin.xml");
+            XmlTextReader textReader = new XmlTextReader(Path.Combine("..", "..", "..", "_Data", "EidasLightResponseMin.xml"));
             XmlReader reader = XmlReader.Create(textReader, settings);
 
             var serializer = new EidasLightProtocolSerializer();
@@ -313,8 +313,8 @@ namespace Abc.IdentityModel.Protocols.EidasLight.UnitTests {
                 dtdSettings.XmlResolver = new TestXmlResolver();
 
                 readersettings.Schemas.XmlResolver = new TestXmlResolver();
-                readersettings.Schemas.Add(null, @"..\..\..\_Data\LightRequest.xsd");
-                readersettings.Schemas.Add(null, @"..\..\..\_Data\LightResponse.xsd");
+                readersettings.Schemas.Add(null, Path.Combine("..", "..", "..", "_Data", "LightRequest.xsd"));
+                readersettings.Schemas.Add(null, Path.Combine("..", "..", "..", "_Data", "LightResponse.xsd"));
                 //readersettings.Schemas.Add("http://www.w3.org/2000/09/xmldsig#", XmlReader.Create(@"..\..\..\_Data\xmldsig-core-schema.xsd", dtdSettings));
                 //readersettings.Schemas.Add("http://www.w3.org/2001/04/xmlenc#", XmlReader.Create(@"..\..\..\_Data\xenc-schema.xsd", dtdSettings));
                 //readersettings.Schemas.Add(null, @"..\..\..\_Data\saml-schema-protocol-2.0.xsd");
