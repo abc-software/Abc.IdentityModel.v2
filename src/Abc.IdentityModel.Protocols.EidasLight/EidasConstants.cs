@@ -95,6 +95,12 @@ namespace Abc.IdentityModel.Protocols.EidasLight {
             public const string PlaceOfBirth = Namespaces.EidasNatural + "/PlaceOfBirth";
             public const string CurrentAddress = Namespaces.EidasNatural + "/CurrentAddress";
             public const string Gender = Namespaces.EidasNatural + "/Gender";
+            public const string Nationality = Namespaces.EidasNatural + "/Nationality";
+            public const string CountryOfBirth = Namespaces.EidasNatural + "/CountryOfBirth";
+            public const string TownOfBirth = Namespaces.EidasNatural + "/TownOfBirth";
+            public const string CountryOfResidence = Namespaces.EidasNatural + "/CountryOfResidence";
+            public const string PhoneNumber = Namespaces.EidasNatural + "/PhoneNumber";
+            public const string EmailAddress = Namespaces.EidasNatural + "/EmailAddress";
 
             // Legal Person Attribute Definitions
             public const string LegalPersonIdentifier = Namespaces.EidasLegal + "/LegalPersonIdentifier";
@@ -107,6 +113,8 @@ namespace Abc.IdentityModel.Protocols.EidasLight {
             public const string EORI = Namespaces.EidasLegal + "/EORI";
             public const string SEED = Namespaces.EidasLegal + "/SEED";
             public const string SIC = Namespaces.EidasLegal + "/SIC";
+            public const string LegalPhoneNumber = Namespaces.EidasLegal + "/LegalPhoneNumber";
+            public const string LegalEmailAddress = Namespaces.EidasLegal + "/LegalEmailAddress";
 
             // Representative Natural Person Attribute Definitions
             public const string RepresentativePersonIdentifier = Namespaces.EidasNatural + Representative + "/PersonIdentifier";
@@ -117,6 +125,12 @@ namespace Abc.IdentityModel.Protocols.EidasLight {
             public const string RepresentativePlaceOfBirth = Namespaces.EidasNatural + Representative + "/PlaceOfBirth";
             public const string RepresentativeCurrentAddress = Namespaces.EidasNatural + Representative + "/CurrentAddress";
             public const string RepresentativeGender = Namespaces.EidasNatural + Representative + "/Gender";
+            public const string RepresentativeNationality = Namespaces.EidasNatural + Representative + "/Nationality";
+            public const string RepresentativeCountryOfBirth = Namespaces.EidasNatural + Representative + "/CountryOfBirth";
+            public const string RepresentativeTownOfBirth = Namespaces.EidasNatural + Representative + "/TownOfBirth";
+            public const string RepresentativeCountryOfResidence = Namespaces.EidasNatural + Representative + "/CountryOfResidence";
+            public const string RepresentativePhoneNumber = Namespaces.EidasNatural + Representative + "/PhoneNumber";
+            public const string RepresentativeEmailAddress = Namespaces.EidasNatural + Representative + "/EmailAddress";
 
             // Representative Legal Person Attribute Definitions
             public const string RepresentativeLegalPersonIdentifier = Namespaces.EidasLegal + Representative + "/LegalPersonIdentifier";
@@ -129,6 +143,8 @@ namespace Abc.IdentityModel.Protocols.EidasLight {
             public const string RepresentativeEORI = Namespaces.EidasLegal + Representative + "/EORI";
             public const string RepresentativeSEED = Namespaces.EidasLegal + Representative + "/SEED";
             public const string RepresentativeSIC = Namespaces.EidasLegal + Representative + "/SIC";
+            public const string RepresentativeLegalPhoneNumber = Namespaces.EidasLegal + Representative + "/LegalPhoneNumber";
+            public const string RepresentativeLegalEmailAddress = Namespaces.EidasLegal + Representative + "/LegalEmailAddress";
 
             private ClaimTypes() {
             }
